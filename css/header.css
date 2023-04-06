@@ -12,6 +12,13 @@
     z-index: 100;
 }
 
+@media(max-width:769px) {
+    .header {
+        position: fixed;
+        background: rgb(28, 42, 69);
+    }
+}
+
 .header h1 {
     line-height: 70px;
 }

@@ -15,40 +15,31 @@ $(function () {
         cssEase: 'linear',
     });
 
-    $('.wedding_slide').slick({
-        dots: true,
+    $('.bu_content .bu_sl').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
         arrows: true,
-        cssEase: 'linear',
+        dots: false,
+        infinite: true,
+        asNavFor: '.bu_content .bu_nav'
     });
-
-    $('.wedding_nav .inner.content .gall_nav .gall_num').on('click', function () {
-        $('.wedding_nav .inner.content .gall_nav .gall_num').not($(this)).removeClass('on');
-        $(this).toggleClass('on')
-    });
-
-    $('.right .right_Topbox .r_other .other_flex span').on('click', function () {
-        $('.right .right_Topbox .r_other .other_flex span').not($(this)).removeClass('on');
-        $(this).toggleClass('on')
+    $('.bu_content .bu_nav').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
+        infinite: true,
+        centerMode: true,
+        focusOnSelect: true,
+        asNavFor: '.bu_content .bu_sl',
     });
 
     // 슬라이드 }
-
-    $('.down_con a').click(function () {
-        $('html, body').animate({
-            scrollTop: $($.attr(this, 'href')).offset().top
-        }, 400);
-        return false;
-    });
-
-    $(window).load(function () {
-        console.log("onload : start");
-    });
 
     $(window).scroll(function () {
         var scrollValue = $(document).scrollTop();
         console.log(scrollValue);
     });
-
 
 
     $('.top_btn a').click(function () {
@@ -57,6 +48,7 @@ $(function () {
         }, 500);
         return false;
     });
+
     $("#top_btn").scrollTop(0);
 
     $('.popup .pop_right .pop_arrow').on('click', function () {
