@@ -61,6 +61,7 @@
         transform: translate(0, -50%);
         text-shadow: 0 0 1px #000;
         color: #fff;
+
         padding-right: 20px;
     }
 
@@ -91,10 +92,24 @@
     border: 1px solid #fff;
 }
 
+@media(max-width:769px) {
+
+    .mainVisual .visual_slide .slick-dots>li>button {
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        font-size: 0;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid #fff;
+    }
+
+}
+
 .mainVisual .visual_slide .slick-dots .slick-active button {
     background: #ff5c00;
     border: 1px solid #ff5c00;
 }
+
 
 .mainAbout {
     background: url(../img/main_about_bg.jpg) no-repeat center center/cover;

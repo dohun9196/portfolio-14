@@ -51,7 +51,9 @@
 .visual_tit h2 {
     font-size: 70px;
     font-weight: 700;
+    color: #ff5c00;
     margin: 10px 0;
+    text-shadow: none;
 }
 
 .visual_tit span {
