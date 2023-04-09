@@ -18,7 +18,7 @@ $(function () {
     $('.bu_content .bu_sl').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: false,
         dots: false,
         infinite: true,
         asNavFor: '.bu_content .bu_nav'
@@ -36,6 +36,23 @@ $(function () {
 
     // 슬라이드 }
 
+    $('.popup .pop_right .pop_arrow').on('click', function () {
+        $(this).toggleClass('on');
+        $('.popup').toggleClass('on');
+    })
+
+
+    $('.header .bar').on('click', function () {
+        $('.header, .header .bar').toggleClass('on');
+    });
+
+    $('.header .gnb>ul>li').on('click', function () {
+        $(this).addClass('on').siblings().removeClass('on');
+
+    });
+
+
+
     $(window).scroll(function () {
         var scrollValue = $(document).scrollTop();
         console.log(scrollValue);
@@ -51,24 +68,4 @@ $(function () {
 
     $("#top_btn").scrollTop(0);
 
-    $('.popup .pop_right .pop_arrow').on('click', function () {
-        $(this).toggleClass('on');
-        $('.popup').toggleClass('on');
-    })
-
-    //쿠키설정    
-
-    // $('.popup .pop_left .close').on('click', function () {
-    //     $('.popup .pop_left').hide();
-    // });
-
-    // var getCookie = $.cookie('.popup .pop_left');
-
-    // if (!getCookie) {
-    //     $('.popup .pop_left').show();
-    // }
-    // $('.popup .pop_left input').on('change', function () {
-    //     $.cookie('popup .pop_left', 'value', { expires: 1 });
-    //     $('.popup .pop_left').hide();
-    // });
 });

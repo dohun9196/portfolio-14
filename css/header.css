@@ -95,7 +95,7 @@
     min-width: 150px;
 
     white-space: nowrap;
-    background: #281e19;
+    background: rgba(28, 42, 69, 0.6);
 
     padding: 20px;
 
@@ -105,9 +105,18 @@
 }
 
 .header .gnb>ul>li:hover .drop_down {
-    top: 100%;
+    top: 10%;
     opacity: 1;
     visibility: visible;
+}
+
+@media (max-width: 768px) {
+
+    .header .gnb>ul>li:hover .drop_down {
+        top: 10%;
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 .header .gnb>ul>li .drop_down>li>a {
@@ -119,6 +128,10 @@
     color: #fff;
 }
 
+.header .gnb>ul>li .drop_down>li>a:hover {
+    color: #ff5c00;
+}
+
 .header .gnb>ul>li .drop_down>li {
     padding: 5px 0;
 }
@@ -126,7 +139,15 @@
 .header .bar {
     cursor: pointer;
     color: #fff;
-    background: rgba(28, 42, 69, 0.8);
+    /* background: rgba(28, 42, 69, 0.6); */
+}
+
+.header .bar.on {
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: #ff5c00;
+    z-index: 999;
 }
 
 .header .bar i {
@@ -137,4 +158,63 @@
     font-size: 30px;
     line-height: 70px;
 
+}
+
+.header.on .inner .gnb {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 999px;
+
+    background: rgb(28, 42, 69);
+    z-index: 999;
+
+}
+
+.header.on .inner .gnb>ul {
+    gap: 30px;
+    flex-direction: column;
+    height: 100%;
+    padding: 100px;
+}
+
+.header.on .inner .gnb>ul>li a {
+    text-align: left;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .header .inner .gnb>ul>li.on>a {
+        color: #ff5c00;
+    }
+
+    .header .inner .gnb>ul>li .drop_down {
+        position: static;
+
+        transform: translate(0);
+        height: 0;
+        min-width: 150px;
+
+        white-space: nowrap;
+        padding: 0px;
+
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.1s;
+    }
+
+    .header .inner .gnb>ul>li.on .drop_down {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .header .gnb>ul>li .drop_down>li>a {
+        text-align: center;
+
+    }
 }
